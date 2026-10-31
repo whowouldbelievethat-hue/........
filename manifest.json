@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Financial AI Agent — Local Runner",
+  "version": "0.1.0",
+  "description": "تشغيل مساعد التدريب داخل تبويب المنصة المصرح بها، بدون نقل جلسة الدخول إلى خادم خارجي.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://egy.app.spx-learning-square.com/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "Financial AI Agent", "default_popup": "popup.html" },
+  "content_scripts": [{ "matches": ["https://egy.app.spx-learning-square.com/*"], "js": ["content.js"], "run_at": "document_idle" }]
+}
